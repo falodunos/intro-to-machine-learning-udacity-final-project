@@ -29,6 +29,7 @@ The features I finally used were the following:
 The features were selected by using `SelectKBest` imported from `sklearn.feature_selection` module. Yes, I did feature scaling, it is an important preprocessing techniques because it normalizes the dataset – yielding balanced features. Imbalance features create situations where one feature dominate and overshadow the effect of others, thereby compromising the trustworthiness of the experiment. Feature scaling helps re-scale the features so that they span comparable ranges, usually between zero and one. Moreover, without scaling, in my experiments algorithm like SVM was heavily impaired in time complexity. The two features I engineered were `'from_poi_to_this_person_ratio'`, and `'from_this_person_to_poi_ratio'`. The rationale behind this is that if the ratio of messages to and from a person to POI is high, it is likely that such a person is also POI. I tested these two features alone with Decision Tree algorithm, the result was an accuracy value of `0.8333`, a precision value of `0.416667` and recall value of `0.75`. 
 
 The feature scores obtained from using SelectKBest are tabulated below:
+
 | FEATURE | SCORE |
 |:--------|------:|
 |'salary' |	0.0070633544604325306 |
