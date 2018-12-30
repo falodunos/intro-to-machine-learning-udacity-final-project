@@ -106,15 +106,13 @@ Validation is the process of testing to see that your algorithm is doing accordi
 
 >How did you validate your analysis ?
 
-I splitted available data into `training`, `testing`, and `validation sets`.
+I shared available data into training, testing, and validation sets. The validation strategies I used are listed below. Note that the main difference is the number of split being done per time:
 
-The validation strategies I used are listed below. Note that the main difference is the number of split being done per time: 
 -	Holdout: n groups = 1; Data is divided into two frames: training data frames and validation data frame. In any of the methods, one sample goes into the training set while the other into the test set. So the samples do not overlap, if they do, we just can’t trust our validation.
 -	Sklearn.model_selection.shufflesplit
 -	K-fold: K-fold can be viewed as a repeated holdout, because we split our data into k parts and iterate through them, using every part as a validation set only one. After this procedure, we average scores over these k-folds. It is important to understand the difference between k-fold and usual holdout or bits of k-times. While it is possible to average scores they receive after k different holdouts. In this case, some samples may never get invalidation, while others can be there multiple times. On the other side, the core idea of k-fold is that we want to use every sample for validation only one. This is method is a good choice when we have have a minimum amount of data, and we can get either a sufficiently big difference in quality, or different optimal parameters between folds.
 -	Leave-one-out:  A special case of K-fold where k is the number of samples in our data. This means it will iterate through every sample in our data. Each time using k-1 object is a train subset and object left is a test subject. This method can be helpful when we have too little data and just enough model to train.
-
-Stratification preserves the same target distribution over different folds.
+-   Stratification preserves the same target distribution over different folds.
 
 # Question 6
 >Give at least 2 evaluation metrics and your average performance for each of them.  Explain an interpretation of your metrics that says something human-understandable about your algorithm’s performance. [relevant rubric item: “usage of evaluation metrics”]
